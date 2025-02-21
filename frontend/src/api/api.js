@@ -19,9 +19,7 @@ export const fetchAppointments = async () => {
 };
 
 export const bookAppointment = async (appointmentData) => {
-    console.log(appointmentData)
   const res = await axios.post(`${BASE_URL}/appointments/`, appointmentData);
-  console.log(res);
   return res.data;
 };
 
