@@ -1,9 +1,22 @@
-import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import DoctorSelection from "./pages/DoctorSelection";
+import Appointment from "./pages/Appointment";
+import AppointmentList from "./pages/AppointmentList";
 
-export default function App() {
+function App() {
   return (
-    <div className='bg-red-500 text-white p-4'>
-      Hello
-    </div>
-  )
+    <Router>
+      <div className="min-h-screen bg-gray-100">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/doctors" element={<DoctorSelection />} />
+          <Route path="/appointment/:doctorId" element={<Appointment />} />
+          <Route path="/appointments" element={<AppointmentList />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
+
+export default App;

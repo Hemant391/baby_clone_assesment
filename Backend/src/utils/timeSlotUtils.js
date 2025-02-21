@@ -1,4 +1,5 @@
 const moment = require('moment');
+const Appointment = require('../models/Appointment');
 
 const calculateAvailableSlots = (workingHours, appointments) => {
   const { start, end } = workingHours;

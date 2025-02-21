@@ -11,6 +11,16 @@ const getDoctors = async (req, res) => {
   }
 };
 
+const getDoctor = async(req, res)=>{
+  try {
+    const id = req.params.id
+    const doctor = await Doctor.findById(id);
+    res.status(200).json(doctor);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
+
 const getAvailableSlots = async (req, res) => {
   try {
     const doctor = await Doctor.findById(req.params.id);
@@ -28,4 +38,4 @@ const getAvailableSlots = async (req, res) => {
   }
 };
 
-module.exports = { getDoctors, getAvailableSlots };
+module.exports = { getDoctors, getDoctor, getAvailableSlots };
