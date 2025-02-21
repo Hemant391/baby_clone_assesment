@@ -3,8 +3,11 @@ import { useParams } from "react-router-dom";
 import { bookAppointment } from "../api/api.js";
 import { BASE_URL } from "../api/api.js";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
 
 const Appointment = () => {
+  const navigate = useNavigate();
   const { doctorId } = useParams();
   const [slots, setSlots] = useState([]);
   const [selectedSlot, setSelectedSlot] = useState(null);
@@ -39,6 +42,7 @@ const Appointment = () => {
     });
 
     alert("Appointment booked successfully");
+    navigate('/');
   };
 
   return (
