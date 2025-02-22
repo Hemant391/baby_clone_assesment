@@ -61,7 +61,7 @@ const updateAppointment = async (req, res) => {
   }
 };
 
-// **Delete Appointment**
+
 const deleteAppointment = async (req, res) => {
   try {
     const appointment = await Appointment.findById(req.params.id);
