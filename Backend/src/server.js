@@ -24,5 +24,5 @@ app.use('/appointments', appointmentRoutes);
 app.use(errorHandler);
 
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => app.listen(5000, () => console.log('Server running on port 5000')))
+  .then(() => app.listen(process.env.Backend_PORT, () => console.log('Server running on port 5000')))
   .catch(err => console.log(err));

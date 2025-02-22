@@ -1,7 +1,8 @@
 import axios from "axios";
 
 
-export const BASE_URL = "http://localhost:5000";
+// export const BASE_URL = "http://localhost:5000";
+export const BASE_URL = "https://baby-clone-assesment-1.onrender.com";
 
 export const fetchDoctors = async () => {
   const res = await fetch(`${BASE_URL}/doctors`);
