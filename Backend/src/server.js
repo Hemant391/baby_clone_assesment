@@ -23,6 +23,6 @@ app.use('/doctors', doctorRoutes);
 app.use('/appointments', appointmentRoutes);
 app.use(errorHandler);
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI,{dbname:'AppointmentBooking'})
   .then(() => app.listen(process.env.Backend_PORT, () => console.log('Server running on port 5000')))
   .catch(err => console.log(err));

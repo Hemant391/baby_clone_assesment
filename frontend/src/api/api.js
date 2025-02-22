@@ -15,8 +15,8 @@ export const fetchAvailableSlots = async (doctorId, date) => {
 };
 
 export const fetchAppointments = async () => {
-  const res = await fetch(`${BASE_URL}/appointments`);
-  return res.json();
+  const res = await axios.get(`${BASE_URL}/appointments`);
+  return res.data;
 };
 
 export const bookAppointment = async (appointmentData) => {
