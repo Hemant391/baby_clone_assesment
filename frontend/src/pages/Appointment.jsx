@@ -46,7 +46,7 @@ const Appointment = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-10 bg-white shadow-lg rounded-lg p-6">
+    <div className="max-w-2xl mx-auto  bg-white shadow-lg rounded-lg p-8">
       <h2 className="text-2xl font-bold text-center text-gray-800 mb-5">Book an Appointment</h2>
 
       {/* Patient Name Input */}
