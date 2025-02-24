@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const doctorRoutes = require('./routes/doctorRoutes');
 const appointmentRoutes = require('./routes/AppointmentRoutes');
 const errorHandler = require('./middlewares/errorHandler');
+const port = process.env.PORT || 4000;
 
 const app = express();
 app.use(express.json());
@@ -24,5 +25,5 @@ app.use('/appointments', appointmentRoutes);
 app.use(errorHandler);
 
 mongoose.connect(process.env.MONGO_URI,{dbname:'AppointmentBooking'})
-  .then(() => app.listen(process.env.Backend_PORT, () => console.log('Server running on port 5000')))
+  .then(() => app.listen(process.env.port, () => console.log('Server running on port 5000')))
   .catch(err => console.log(err));
